@@ -6,7 +6,7 @@
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/12 18:31:38 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/12 19:58:13 by tle-mign         ###   ########.fr       */
+/*   Updated: 2014/03/12 20:01:56 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ void				ft_analize_environment(t_center_ai *center,
 /*
 **	ft_who_am_i.c
 */
-void				ft_who_am_i(t_center *center);
+void				ft_who_am_i(t_center_ai *center);
 /*
 **	ft_where_am_i.c
 */
@@ -118,11 +118,11 @@ void				ft_when_i_do(t_center_ai *center);
 /*
 **	ft_define_master.c
 */
-void				ft_define_master(t_center *center);
+void				ft_define_master(t_center_ai *center);
 /*
 **	ft_verify_master.c
 */
-void				ft_verify_master(t_center *center);
+void				ft_verify_master(t_center_ai *center);
 /*
 **	ft_interact_with_master.c
 */
