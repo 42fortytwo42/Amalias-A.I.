@@ -6,13 +6,13 @@
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/12 19:46:45 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/12 19:47:48 by tle-mign         ###   ########.fr       */
+/*   Updated: 2014/03/12 20:23:02 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libamalias.h"
 
-void	ft_define_master(t_center *center)
+void	ft_define_master(t_center_ai *center)
 {
 	if (center)
 	{

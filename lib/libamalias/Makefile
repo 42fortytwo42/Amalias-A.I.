@@ -6,7 +6,7 @@
 #    By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/25 12:25:27 by tle-mign          #+#    #+#              #
-#    Updated: 2014/03/12 18:31:19 by tle-mign         ###   ########.fr        #
+#    Updated: 2014/03/12 20:14:56 by tle-mign         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -20,9 +20,26 @@ AR = ar rc
 
 RANLIB = ranlib
 
-HEADER = libcolor.h
+HEADER = libamalias.h
 
-SRC =
+SRC =	ft_amalias.c \
+		ft_analyze_read_entry.c \
+		ft_check_arg.c \
+		ft_compute_answer.c \
+		ft_define_master.c \
+		ft_initialize_environment.c \
+		ft_interact_with_master.c \
+		ft_learn.c \
+		ft_print_error.c \
+		ft_react_to_environment.c \
+		ft_read_main_entry.c \
+		ft_save_arg.c \
+		ft_verify_master.c \
+		ft_verify_the_laws.c \
+		ft_what_i_do.c \
+		ft_when_i_do.c \
+		ft_where_am_i.c \
+		ft_who_am_i.c
 
 OBJ = $(SRC:.c=.o)
 

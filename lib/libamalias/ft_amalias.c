@@ -6,13 +6,13 @@
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/12 18:33:52 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/12 19:36:00 by tle-mign         ###   ########.fr       */
+/*   Updated: 2014/03/12 20:20:04 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libamalias.h"
 
-int		ft_amalias(int argc, char argv, char env)
+int		ft_amalias(int argc, char **argv, char **env)
 {
 	t_center_ai		*center;
 	t_env_ai		*environment;
@@ -23,8 +23,8 @@ int		ft_amalias(int argc, char argv, char env)
 		&& ft_check_arg(argc, argv, env) == 1
 		&& ft_save_arg(argc, argv, env, center) == 1)
 	{
-		center->link_to_env_ai->environment;
-		ft_initialize_environment(central, environment);
+		center->link_to_env_ai = environment;
+		ft_initialize_environment(center, environment);
 		ft_who_am_i(center);
 		ft_where_am_i(center);
 		ft_what_i_do(center);

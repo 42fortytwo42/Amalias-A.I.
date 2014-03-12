@@ -6,23 +6,26 @@
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/12 18:31:38 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/12 20:01:56 by tle-mign         ###   ########.fr       */
+/*   Updated: 2014/03/12 20:22:26 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBAMALIAS_H
 # define LIBAMALIAS_H
 
+# include <unistd.h>
+# include <stdlib.h>
 # include "libamalias_errors.h"
+# include "../lib.h"
 
-typedef struct						s_central_ai
+typedef struct						s_center_ai
 {
-	int								error;
+	char							*error;
 	char							*user;
 	char							*name_amalias;
 	char							*temporary_char;
 	struct s_env_ai					*link_to_env_ai;
-}									t_central_ai;
+}									t_center_ai;
 
 typedef struct						s_env_ai
 {
@@ -97,7 +100,7 @@ int					ft_save_arg(int argc, char **argv, char **env,
 /*
 **	ft_initialize_environment.c
 */
-void				ft_analize_environment(t_center_ai *center,
+void				ft_initialize_environment(t_center_ai *center,
 						t_env_ai *environment);
 /*
 **	ft_who_am_i.c
@@ -130,7 +133,7 @@ void				ft_interact_with_master(t_center_ai *center);
 /*
 **	ft_read_main_entry.c
 */
-void				ft_read_main_entry(t_central_ai *center);
+void				ft_read_main_entry(t_center_ai *center);
 
 /*
 **	ft_analyze_read_entry.c
@@ -139,7 +142,7 @@ void				ft_analyze_read_entry(t_center_ai *center);
 /*
 **	ft_compute_answer.c
 */
-void				ft_compute_answer(t_central_ai *center);
+void				ft_compute_answer(t_center_ai *center);
 /*
 **	ft_learn.c
 */
@@ -151,6 +154,6 @@ void				ft_verify_the_laws(t_center_ai *center);
 /*
 **	ft_react_to_environment.c
 */
-void				ft_react_to_environment(t_center *center);
+void				ft_react_to_environment(t_center_ai *center);
 
 #endif /* !LIBAMALIAS_H */
