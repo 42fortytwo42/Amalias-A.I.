@@ -6,16 +6,21 @@
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/12 18:31:38 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/13 18:51:27 by tle-mign         ###   ########.fr       */
+/*   Updated: 2014/03/13 19:21:28 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBAMALIAS_H
 # define LIBAMALIAS_H
 
+# define BUFFER_READ_MAIN_ENTRY 4196
+
+# include <sys/types.h>
+# include <sys/uio.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include "libamalias_errors.h"
+# include "libamalias_define.h"
 # include "../lib.h"
 
 typedef struct						s_center_ai
@@ -24,6 +29,7 @@ typedef struct						s_center_ai
 	char							*user;
 	char							*name_amalias;
 	char							*temporary_char;
+	char							*temporary_read_main_entry;
 	struct s_env_ai					*link_to_env_ai;
 	struct s_amalias				*link_to_amalias;
 	struct s_security				*link_to_security;
@@ -93,6 +99,7 @@ typedef struct						s_security
 **	ft_amalias.c
 */
 char				*ft_amalias(int argc, char **argv, char **env);
+void				ft_define_context(t_center_ai *center);
 /*
 **	ft_check_arg.c
 */
@@ -105,8 +112,7 @@ int					ft_save_arg(int argc, char **argv, char **env,
 /*
 **	ft_initialize_environment.c
 */
-void				ft_initialize_environment(t_center_ai *center,
-						t_env_ai *environment);
+void				ft_initialize_environment(t_center_ai *center);
 void				ft_initialize_laws(t_center_ai *center);
 void				ft_initialize_time_and_date(t_center_ai *center);
 void				ft_initialize_id(t_center_ai *center);

@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_save_arg.c                                      :+:      :+:    :+:   */
+/*   libamalias_define.h                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/03/12 19:33:06 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/13 18:55:40 by tle-mign         ###   ########.fr       */
+/*   Created: 2014/03/13 18:56:23 by tle-mign          #+#    #+#             */
+/*   Updated: 2014/03/13 19:03:44 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libamalias.h"
+#ifndef LIBAMALIAS_DEFINE_H
+# define LIBAMALIAS_DEFINE_H
 
-int		ft_save_arg(int argc, char **argv, char **env, t_center_ai *center)
-{
-	if (argc && argv && env && center)
-	{
+# define SPEECH_ONE "AMALIAS ENGAGING INITIALIZATION\n"
 
-		return (1);
-	}
-	return (0);
-}
+#endif /* !LIBAMALIAS_DEFINE_H */

@@ -6,13 +6,13 @@
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/12 19:38:32 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/13 18:34:26 by tle-mign         ###   ########.fr       */
+/*   Updated: 2014/03/13 19:16:44 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libamalias.h"
 
-void	ft_initialize_environment(t_center_ai *center, t_env_ai *environment)
+void	ft_initialize_environment(t_center_ai *center)
 {
 	char		*name_amalias;
 	char		*temporary_char_malloc;
@@ -20,20 +20,21 @@ void	ft_initialize_environment(t_center_ai *center, t_env_ai *environment)
 	name_amalias = (char *)malloc(sizeof(char) * 1024);
 	temporary_char_malloc = (char *)malloc(sizeof(char) * 1024);
 	name_amalias = "Amalias A.I.O.S.";
-	if (center && environment && name_amalias && temporary_char_malloc)
+	if (center && name_amalias && temporary_char_malloc)
 	{
+		ft_putstr_yellow("Initialize Environment :\t\t");
 		center->error = 0;
 		center->user = NULL;
 		center->name_amalias = NULL;
 		center->temporary_char = NULL;
 		center->link_to_env_ai = NULL;
-		center->link_to_env_ai->speech_recognition = 0;
-		center->link_to_env_ai->text_recognition = 1;
-		center->link_to_env_ai->contextual_recognition = 1;
-		center->link_to_env_ai->image_recognition = 0;
-		center->link_to_env_ai->video_recognition = 0;
-		center->link_to_env_ai->sound_recognition = 0;
-		center->link_to_env_ai->master_recognition = 1;
+//		center->link_to_env_ai->speech_recognition = 0;
+//		center->link_to_env_ai->text_recognition = 1;
+//		center->link_to_env_ai->contextual_recognition = 1;
+//		center->link_to_env_ai->image_recognition = 0;
+//		center->link_to_env_ai->video_recognition = 0;
+//		center->link_to_env_ai->sound_recognition = 0;
+//		center->link_to_env_ai->master_recognition = 1;
 		center->link_to_amalias->my_name = name_amalias;
 		center->link_to_amalias->temporary_int = 0;
 		center->link_to_amalias->temporary_float = 0;
@@ -41,10 +42,19 @@ void	ft_initialize_environment(t_center_ai *center, t_env_ai *environment)
 		center->link_to_amalias->temporary_char = temporary_char_malloc;
 		center->link_to_amalias->personality = 5;
 		center->link_to_amalias->gender = 0;
+		ft_putstr_green("is OK !\n");
+		ft_putstr_yellow("Initialize Time and Date :\t\t");
 		ft_initialize_time_and_date(center);
+		ft_putstr_green("is OK !\n");
+		ft_putstr_yellow("Initialize the Robots Laws :\t\t");
 		ft_initialize_laws(center);
+		ft_putstr_green("is OK !\n");
+		ft_putstr_yellow("Initialize ID Authentification System :\t");
 		ft_initialize_id(center);
+		ft_putstr_green("is OK !\n");
+		ft_putstr_yellow("Initialize Security System :\t\t");
 		ft_initialize_security(center);
+		ft_putstr_green("is OK !\n");
 	}
 }
 
