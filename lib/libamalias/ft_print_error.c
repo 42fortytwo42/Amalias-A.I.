@@ -6,7 +6,7 @@
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/12 18:42:07 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/13 18:47:07 by tle-mign         ###   ########.fr       */
+/*   Updated: 2014/03/13 19:56:43 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,11 @@ void	ft_print_error(char *error)
 {
 	if (error)
 	{
-		ft_putstr_green("Starting\t");
-		ft_putstr_red("=-> Error Report <-=\n");
+		ft_putstr_green("\nStarting\t");
+		ft_putstr_red("=-> Error Report <-=\n\n");
+		ft_putstr_yellow("Error Code : \t");
 		ft_putstr_blue(error);
-		ft_putstr_green("Ending\t");
+		ft_putstr_green("\n\nEnding\t\t");
 		ft_putstr_red("=-> Error Report <-=\n");
 	}
 }

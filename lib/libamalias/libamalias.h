@@ -6,7 +6,7 @@
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/12 18:31:38 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/13 19:21:28 by tle-mign         ###   ########.fr       */
+/*   Updated: 2014/03/13 19:56:04 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,6 +154,7 @@ void				ft_read_main_entry(t_center_ai *center);
 **	ft_analyze_read_entry.c
 */
 void				ft_analyze_read_entry(t_center_ai *center);
+void				ft_print_help(void);
 /*
 **	ft_compute_answer.c
 */

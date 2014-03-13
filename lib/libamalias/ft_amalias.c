@@ -6,7 +6,7 @@
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/12 18:33:52 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/13 19:28:44 by tle-mign         ###   ########.fr       */
+/*   Updated: 2014/03/13 19:47:30 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,10 @@ char	*ft_amalias(int argc, char **argv, char **env)
 			ft_react_to_environment(center);
 		}
 		if (center->error != NULL)
+		{
 			ft_putstr_blue("You are leaving Amalias A.I.O.S.\n");
+			return (center->error);
+		}
 	}
 	else
 		ft_putstr_red("Error While Engaging Amalias Engine.\n");
