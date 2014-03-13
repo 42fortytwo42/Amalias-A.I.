@@ -6,7 +6,7 @@
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/12 19:51:59 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/13 19:55:34 by tle-mign         ###   ########.fr       */
+/*   Updated: 2014/03/13 20:06:21 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,20 @@ void	ft_analyze_read_entry(t_center_ai *center)
 			center->error = "EXITISOK";
 		else if (ft_strcmp(center->temporary_read_main_entry, "help\n") == 0)
 			ft_print_help();
+		else if (ft_strcmp(center->temporary_read_main_entry, "amalias\n") == 0)
+			ft_putstr_purple("Don't Panic I am here.\n");
+		else if (ft_strcmp(center->temporary_read_main_entry, "locate\n") == 0)
+			ft_putstr_purple("We are for now unable to locate us, i am sorry.\n");
+		else if (ft_strcmp(center->temporary_read_main_entry, "time\n") == 0)
+			ft_putstr_purple("I am not able to communicate this information for now.\n");
+		else if (ft_strcmp(center->temporary_read_main_entry, "syntax\n") == 0)
+			ft_putstr_purple("You are enjoying first level of syntax analysis.\n");
+		else if (ft_strcmp(center->temporary_read_main_entry, "sos\n") == 0)
+			ft_putstr_purple("Don't Panic and call the autorities, i cannot call anyone for now.\n");
+		else if (ft_strcmp(center->temporary_read_main_entry, "lock\n") == 0)
+			ft_putstr_purple("Don't Panic, security is not enough structured at this time.\n");
+		else if (ft_strcmp(center->temporary_read_main_entry, "unlock\n") == 0)
+			ft_putstr_purple("Don't Panic, security is not enough structured at this time.\n");
 	}
 }
 
