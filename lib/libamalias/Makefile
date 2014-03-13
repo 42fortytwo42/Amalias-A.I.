@@ -6,7 +6,7 @@
 #    By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/25 12:25:27 by tle-mign          #+#    #+#              #
-#    Updated: 2014/03/12 20:14:56 by tle-mign         ###   ########.fr        #
+#    Updated: 2014/03/13 18:39:02 by tle-mign         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -39,7 +39,9 @@ SRC =	ft_amalias.c \
 		ft_what_i_do.c \
 		ft_when_i_do.c \
 		ft_where_am_i.c \
-		ft_who_am_i.c
+		ft_who_am_i.c \
+		ft_amalias_call_back \
+		ft_revise_learn.c
 
 OBJ = $(SRC:.c=.o)
 

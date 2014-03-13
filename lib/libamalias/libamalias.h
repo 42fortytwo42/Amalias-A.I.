@@ -6,7 +6,7 @@
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/12 18:31:38 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/12 20:22:26 by tle-mign         ###   ########.fr       */
+/*   Updated: 2014/03/13 18:51:27 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ typedef struct						s_center_ai
 	char							*name_amalias;
 	char							*temporary_char;
 	struct s_env_ai					*link_to_env_ai;
+	struct s_amalias				*link_to_amalias;
+	struct s_security				*link_to_security;
 }									t_center_ai;
 
 typedef struct						s_env_ai
@@ -47,9 +49,12 @@ typedef struct						s_amalias
 	char							*temporary_char;
 	int								personality;
 	int								gender;
+	char							*zero_law;
 	char							*first_law;
 	char							*second_law;
 	char							*third_law;
+	char							*your_creator_first_law;
+	char							*your_creator_second_law;
 	char							*date_born;
 	char							*date_now;
 	char							*serial_number;
@@ -79,15 +84,15 @@ typedef struct						s_security
 	char							*master_code;
 	char							*admin_lock;
 	char							*admin_unlock;
-	double							*remote_code_1;
-	double							*remote_code_2;
-	double							*remote_code_3;
+	double							remote_code_1;
+	double							remote_code_2;
+	double							remote_code_3;
 }									t_security;
 
 /*
 **	ft_amalias.c
 */
-int					ft_amalias(int argc, char **argv, char **env);
+char				*ft_amalias(int argc, char **argv, char **env);
 /*
 **	ft_check_arg.c
 */
@@ -102,6 +107,10 @@ int					ft_save_arg(int argc, char **argv, char **env,
 */
 void				ft_initialize_environment(t_center_ai *center,
 						t_env_ai *environment);
+void				ft_initialize_laws(t_center_ai *center);
+void				ft_initialize_time_and_date(t_center_ai *center);
+void				ft_initialize_id(t_center_ai *center);
+void				ft_initialize_security(t_center_ai *center);
 /*
 **	ft_who_am_i.c
 */
@@ -148,6 +157,10 @@ void				ft_compute_answer(t_center_ai *center);
 */
 void				ft_learn(t_center_ai *center);
 /*
+**	ft_revise_learn.c
+*/
+void				ft_revise_learn(t_center_ai *center);
+/*
 **	ft_verify_the_laws.c
 */
 void				ft_verify_the_laws(t_center_ai *center);
@@ -155,5 +168,14 @@ void				ft_verify_the_laws(t_center_ai *center);
 **	ft_react_to_environment.c
 */
 void				ft_react_to_environment(t_center_ai *center);
+/*
+**	ft_amalias_call_back
+*/
+void				ft_amalias_call_back(t_center_ai *center);
+/*
+**	ft_print_error.c
+*/
+void				ft_print_error(char *error);
+void				ft_print_error_and_call_back(t_center_ai *center, char *error);
 
 #endif /* !LIBAMALIAS_H */

@@ -6,24 +6,30 @@
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/12 18:33:52 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/12 20:20:04 by tle-mign         ###   ########.fr       */
+/*   Updated: 2014/03/13 18:49:54 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libamalias.h"
 
-int		ft_amalias(int argc, char **argv, char **env)
+char	*ft_amalias(int argc, char **argv, char **env)
 {
 	t_center_ai		*center;
 	t_env_ai		*environment;
+	t_amalias		*amalias;
+	t_security		*security;
 
 	center = (t_center_ai *)malloc(sizeof(t_center_ai));
 	environment = (t_env_ai *)malloc(sizeof(t_env_ai));
-	if (argc && argv && env && center && environment
+	amalias = (t_amalias *)malloc(sizeof(t_amalias));
+	security = (t_security *)malloc(sizeof(t_security));
+	if (argc && argv && env && center && environment && amalias && security
 		&& ft_check_arg(argc, argv, env) == 1
 		&& ft_save_arg(argc, argv, env, center) == 1)
 	{
 		center->link_to_env_ai = environment;
+		center->link_to_security = security;
+		center->link_to_amalias = amalias;
 		ft_initialize_environment(center, environment);
 		ft_who_am_i(center);
 		ft_where_am_i(center);
@@ -36,8 +42,9 @@ int		ft_amalias(int argc, char **argv, char **env)
 			ft_interact_with_master(center);
 			ft_read_main_entry(center);
 			ft_analyze_read_entry(center);
-			ft_compute_answer(center);
 			ft_learn(center);
+			ft_compute_answer(center);
+			ft_revise_learn(center);
 			ft_verify_the_laws(center);
 			ft_react_to_environment(center);
 		}
@@ -46,5 +53,5 @@ int		ft_amalias(int argc, char **argv, char **env)
 	}
 	else
 		ft_putstr_red("Error While Engaging Amalias Engine.\n");
-	return (0);
+	return (NULL);
 }

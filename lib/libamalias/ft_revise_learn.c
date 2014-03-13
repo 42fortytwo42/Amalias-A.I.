@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_verify_master.c                                 :+:      :+:    :+:   */
+/*   ft_revise_learn.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/03/12 19:48:07 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/13 18:43:55 by tle-mign         ###   ########.fr       */
+/*   Created: 2014/03/13 18:35:23 by tle-mign          #+#    #+#             */
+/*   Updated: 2014/03/13 18:36:04 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libamalias.h"
 
-void		ft_verify_master(t_center_ai *center)
+void	ft_revise_learn(t_center_ai *center)
 {
 	if (center)
 	{
+
 
 	}
 }
