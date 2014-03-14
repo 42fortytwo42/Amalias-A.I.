@@ -6,7 +6,7 @@
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/12 19:38:32 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/13 19:16:44 by tle-mign         ###   ########.fr       */
+/*   Updated: 2014/03/14 18:16:29 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,17 @@
 
 void	ft_initialize_environment(t_center_ai *center)
 {
+	int			count_total;
+	int			count_initialized;
 	char		*name_amalias;
 	char		*temporary_char_malloc;
 
+	count_total = 8;
+	count_initialized = 0;
 	name_amalias = (char *)malloc(sizeof(char) * 1024);
 	temporary_char_malloc = (char *)malloc(sizeof(char) * 1024);
 	name_amalias = "Amalias A.I.O.S.";
-	if (center && name_amalias && temporary_char_malloc)
+	if (center && name_amalias && temporary_char_malloc && count_total)
 	{
 		ft_putstr_yellow("Initialize Environment :\t\t");
 		center->error = 0;
@@ -55,6 +59,47 @@ void	ft_initialize_environment(t_center_ai *center)
 		ft_putstr_yellow("Initialize Security System :\t\t");
 		ft_initialize_security(center);
 		ft_putstr_green("is OK !\n");
+		ft_putstr_yellow("Initialize Speech Recognition :\t\t");
+		if (ft_initialize_speech_recognition(center) == 1)
+		{
+			ft_putstr_green("is OK !\n");
+			count_initialized++;
+		}
+		else
+			ft_putstr_red("Fail.\n");
+		ft_putstr_yellow("Initialize Sentence Generation :\t");
+		if (ft_initialize_sentence_generation(center) == 1)
+		{
+			ft_putstr_green("is OK !\n");
+			count_initialized++;
+		}
+		else
+			ft_putstr_red("Fail.\n");
+		ft_putstr_yellow("Initialize Voice Synthesys :\t\t");
+		if (ft_initialize_voice_synthesis(center) == 1)
+		{
+			ft_putstr_green("is OK !\n");
+			count_initialized++;
+		}
+		else
+			ft_putstr_red("Fail.\n");
+		ft_putstr_blue("Initialization Status : ");
+		if (count_initialized != count_total)
+		{
+			ft_putstr_red("\t\tProcess Incomplete !\n\t\t");
+			ft_putnbr(count_initialized);
+			ft_putstr_blue(" Process initialized on a total of ");
+			ft_putnbr(count_total);
+			ft_putstr_blue(" Process\n");
+		}
+		else
+		{
+			ft_putstr_green("Process Fully Completed");
+			ft_putnbr(count_total);
+			ft_putstr_blue(" Process initialized on a total of ");
+			ft_putnbr(count_total);
+			ft_putstr_blue(" Process\n");
+		}
 	}
 }
 

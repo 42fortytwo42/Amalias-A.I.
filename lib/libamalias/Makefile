@@ -6,7 +6,7 @@
 #    By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/25 12:25:27 by tle-mign          #+#    #+#              #
-#    Updated: 2014/03/13 18:39:02 by tle-mign         ###   ########.fr        #
+#    Updated: 2014/03/14 18:03:43 by tle-mign         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -41,7 +41,10 @@ SRC =	ft_amalias.c \
 		ft_where_am_i.c \
 		ft_who_am_i.c \
 		ft_amalias_call_back \
-		ft_revise_learn.c
+		ft_revise_learn.c \
+		ft_initialize_speech_recognition.c \
+		ft_initialize_sentence_generation.c \
+		ft_initialize_voice_synthesis.c
 
 OBJ = $(SRC:.c=.o)
 
