@@ -1,6 +1,10 @@
 BioDeploy .Amalias /*\ ArtificiaL Intelligence operating SysteM - Open Source Version /*\
 
 This A.I.O.S. is dedicated to space program exploration called .Amalias (this is a BioDeploy initiative).
+.Amalias is a mission borned in february 2013 to explore Io, a Jupiter moon, by developing the possibilities offered by the Open Source/Hardware way.
+
+.Amalias project is designed to make the space robot explorer usable by Public Schools at any time during the mission.
+Here is the challenge. Please, come with us !
 
 Possibles Commands :
 
