@@ -1,5 +1,7 @@
 BioDeploy .Amalias /*\ ArtificiaL Intelligence operating SysteM - Open Source Version /*\
 
+This A.I.O.S. is dedicated to space program exploration called .Amalias (this is a BioDeploy initiative).
+
 Possibles Commands :
 
 -> "amalias" : Hello to my A.I.O.S.
