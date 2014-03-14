@@ -6,7 +6,7 @@
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/12 18:33:52 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/14 19:29:26 by tle-mign         ###   ########.fr       */
+/*   Updated: 2014/03/14 20:17:04 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,25 +65,72 @@ void	ft_define_context(t_center_ai *center)
 	{
 		ft_putstr_green("\tAMALIAS ENGAGING INITIALIZATION\n\n");
 		ft_initialize_environment(center);
-		ft_putstr_green("\tAMALIAS ENGAGING CONTEXTUALIZATION\n\n");
+		ft_check_memory(center);
+		ft_define_master(center);
+		ft_putstr_green("\n\tAMALIAS ENGAGING CONTEXTUALIZATION\n\n");
 		ft_engage_contextualizer(center);
-//		if a memory log file exist => Memory Restoration !
-		if (access("log/memory/memory.amalias", F_OK ) != -1 )
+		if (ft_check_amalias_deployement(center) != 1)
 		{
-			ft_putstr_green("\tAMALIAS MEMORY REGENERATION\n\n");
-			ft_open_memory_log(center);
-			ft_who_am_i(center);
-			ft_where_am_i(center);
-			ft_what_i_do(center);
-			ft_when_i_do(center);
+			ft_putstr_blue("\n\t=> Amalias is starting in Safe Boot Mode <=\n\n");
 		}
 		else
 		{
-			ft_putstr_green("\tAMALIAS MEMORY GENERATION\n\n");
-			ft_generate_memory(center);
+			ft_putstr_blue("Amalias is starting ! Enjoy my friend.\n");
 		}
-		ft_define_master(center);
-		ft_putstr_blue("AMALIAS STARTING ! Enjoy my friend.\n");
 		ft_putstr_purple("\tWelcome to the machine\n\tWelcome on Amalias.\n");
 	}
+}
+
+void	ft_check_memory(t_center_ai *center)
+{
+	if (center)
+	{
+//		if a memory log file exist => Memory Restoration !
+		if (access("log/memory/memory.amalias", F_OK ) != -1 )
+			ft_regenerate_memory(center);
+		else
+			ft_generate_memory(center);
+	}
+}
+
+int		ft_check_amalias_deployement(t_center_ai *center)
+{
+	int		count;
+	int		count_total;
+
+	count_total = 3;
+	count = 0;
+	if (center)
+	{
+		ft_putstr("\n");
+		if (center->deploy_initialization > 0)
+		{
+			ft_putstr_green("\tInitialization Process Fully Completed.\n");
+			count++;
+		}
+		else
+			ft_putstr_red("\tInitialization Process Incomplete !\n");
+		if (center->deploy_memory > 0)
+		{
+			ft_putstr_green("\tMemory Process Fully Completed.\n");
+			count++;
+		}
+		else
+			ft_putstr_red("\tMemory Process Incomplete !\n");
+		if (center->deploy_initialization > 0)
+		{
+			ft_putstr_green("\tContextualization Process Fully Completed.\n");
+			count++;
+		}
+		else
+			ft_putstr_red("\tContextualization Process Incomplete !\n");
+		if (count == count_total)
+		{
+			ft_putstr_green("\tAmalias is fully deployed on this computer.\n");
+			return (1);
+		}
+		else
+			ft_putstr_red("\tAmalias is not fully deployed on this computer.\n");
+	}
+	return (0);
 }

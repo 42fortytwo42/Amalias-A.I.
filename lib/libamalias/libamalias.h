@@ -6,7 +6,7 @@
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/12 18:31:38 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/14 19:28:17 by tle-mign         ###   ########.fr       */
+/*   Updated: 2014/03/14 19:59:50 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,9 @@ typedef struct						s_center_ai
 	char							*name_amalias;
 	char							*temporary_char;
 	char							*temporary_read_main_entry;
+	int								deploy_initialization;
+	int								deploy_memory;
+	int								deploy_contextualization;
 	struct s_env_ai					*link_to_env_ai;
 	struct s_amalias				*link_to_amalias;
 	struct s_security				*link_to_security;
@@ -100,6 +103,8 @@ typedef struct						s_security
 */
 char				*ft_amalias(int argc, char **argv, char **env);
 void				ft_define_context(t_center_ai *center);
+void				ft_check_memory(t_center_ai *center);
+int					ft_check_amalias_deployement(t_center_ai *center);
 /*
 **	ft_check_arg.c
 */
@@ -228,5 +233,9 @@ void				ft_generate_who_am_i(t_center_ai *center);
 void				ft_generate_where_am_i(t_center_ai *center);
 void				ft_generate_what_i_do(t_center_ai *center);
 void				ft_generate_when_i_do(t_center_ai *center);
+/*
+**	ft_regenerate_memory.c
+*/
+void				ft_regenerate_memory(t_center_ai *center);
 
 #endif /* !LIBAMALIAS_H */

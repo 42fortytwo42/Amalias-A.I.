@@ -6,7 +6,7 @@
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/12 19:51:59 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/14 19:33:46 by tle-mign         ###   ########.fr       */
+/*   Updated: 2014/03/14 20:05:36 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void	ft_analyze_read_entry(t_center_ai *center)
 			ft_putstr_purple("Don't Panic, security is not enough structured at this time.\n");
 		else if (ft_strcmp(center->temporary_read_main_entry, "unlock\n") == 0)
 			ft_putstr_purple("Don't Panic, security is not enough structured at this time.\n");
+		else if (ft_strcmp(center->temporary_read_main_entry, "memory\n") == 0)
+			ft_putstr_purple("Please don't try !\n");
 		else if (ft_strcmp(center->temporary_read_main_entry, "\n") == 0)
 			ft_putstr_purple("Please write something that i could understand !\n");
 		else

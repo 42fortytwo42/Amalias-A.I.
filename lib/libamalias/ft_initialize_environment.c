@@ -6,7 +6,7 @@
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/12 19:38:32 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/14 18:52:24 by tle-mign         ###   ########.fr       */
+/*   Updated: 2014/03/14 19:58:53 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,9 @@ void	ft_initialize_environment(t_center_ai *center)
 		center->user = NULL;
 		center->name_amalias = NULL;
 		center->temporary_char = NULL;
+		center->deploy_initialization = 0;
+		center->deploy_memory = 0;
+		center->deploy_contextualization = 0;
 		center->link_to_env_ai = NULL;
 //		center->link_to_env_ai->speech_recognition = 0;
 //		center->link_to_env_ai->text_recognition = 1;
