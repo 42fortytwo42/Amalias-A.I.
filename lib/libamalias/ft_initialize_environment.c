@@ -6,7 +6,7 @@
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/12 19:38:32 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/14 18:16:29 by tle-mign         ###   ########.fr       */
+/*   Updated: 2014/03/14 18:41:19 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_initialize_environment(t_center_ai *center)
 	char		*name_amalias;
 	char		*temporary_char_malloc;
 
-	count_total = 8;
+	count_total = 11;
 	count_initialized = 0;
 	name_amalias = (char *)malloc(sizeof(char) * 1024);
 	temporary_char_malloc = (char *)malloc(sizeof(char) * 1024);
@@ -83,22 +83,48 @@ void	ft_initialize_environment(t_center_ai *center)
 		}
 		else
 			ft_putstr_red("Fail.\n");
-		ft_putstr_blue("Initialization Status : ");
+		ft_putstr_yellow("Initialize Connection to Internet :\t");
+		if (ft_initialize_internet_connection(center) == 1)
+		{
+			ft_putstr_green("is OK !\n");
+			count_initialized++;
+		}
+		else
+			ft_putstr_red("Fail.\n");
+		ft_putstr_yellow("Initialize Amalias Memory :\t\t");
+		if (ft_initialize_internet_connection(center) == 1)
+		{
+			ft_putstr_green("is OK !\n");
+			count_initialized++;
+		}
+		else
+			ft_putstr_red("Fail.\n");
+		ft_putstr_yellow("Initialize Learning Center :\t\t");
+		if (ft_initialize_internet_connection(center) == 1)
+		{
+			ft_putstr_green("is OK !\n");
+			count_initialized++;
+		}
+		else
+			ft_putstr_red("Fail.\n");
+
+		/* Count Initialized*/
+		ft_putstr_blue("\nInitialization Status : ");
 		if (count_initialized != count_total)
 		{
-			ft_putstr_red("\t\tProcess Incomplete !\n\t\t");
+			ft_putstr_red("\t[ Process Incomplete ! ]\n\t");
 			ft_putnbr(count_initialized);
 			ft_putstr_blue(" Process initialized on a total of ");
 			ft_putnbr(count_total);
-			ft_putstr_blue(" Process\n");
+			ft_putstr_blue(" Process.\n\n");
 		}
 		else
 		{
-			ft_putstr_green("Process Fully Completed");
+			ft_putstr_green("\t[ Process Fully Completed ]\n\t");
 			ft_putnbr(count_total);
 			ft_putstr_blue(" Process initialized on a total of ");
 			ft_putnbr(count_total);
-			ft_putstr_blue(" Process\n");
+			ft_putstr_blue(" Process.\n\n");
 		}
 	}
 }

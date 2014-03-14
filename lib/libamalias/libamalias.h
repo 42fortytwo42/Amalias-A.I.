@@ -6,7 +6,7 @@
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/12 18:31:38 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/14 18:04:09 by tle-mign         ###   ########.fr       */
+/*   Updated: 2014/03/14 18:39:46 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -196,5 +196,21 @@ int					ft_initialize_sentence_generation(t_center_ai *center);
 **	ft_initialize_voice_synthesis.c
 */
 int					ft_initialize_voice_synthesis(t_center_ai *center);
+/*
+**	ft_initialize_internet_connection.c
+*/
+int					ft_initialize_internet_connection(t_center_ai *center);
+/*
+**	ft_initialize_amalias_memory.c
+*/
+int					ft_initialize_amalias_memory(t_center_ai *center);
+/*
+**	ft_initialize_learning_system.c
+*/
+int					ft_initialize_learning_system(t_center_ai *center);
+/*
+**	ft_engage_contextualizer.c
+*/
+void				ft_engage_contextualizer(t_center_ai *center);
 
 #endif /* !LIBAMALIAS_H */

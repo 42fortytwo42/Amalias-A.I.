@@ -6,7 +6,7 @@
 #    By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/25 12:25:27 by tle-mign          #+#    #+#              #
-#    Updated: 2014/03/14 18:03:43 by tle-mign         ###   ########.fr        #
+#    Updated: 2014/03/14 18:40:38 by tle-mign         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -44,7 +44,11 @@ SRC =	ft_amalias.c \
 		ft_revise_learn.c \
 		ft_initialize_speech_recognition.c \
 		ft_initialize_sentence_generation.c \
-		ft_initialize_voice_synthesis.c
+		ft_initialize_voice_synthesis.c \
+		ft_initialize_internet_connection.c \
+		ft_initialize_amalias_memory.c \
+		ft_initialize_learning_system.c \
+		ft_engage_contextualizer.c
 
 OBJ = $(SRC:.c=.o)
 
