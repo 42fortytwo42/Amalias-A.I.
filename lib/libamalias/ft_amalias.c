@@ -6,7 +6,7 @@
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/12 18:33:52 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/14 18:48:25 by tle-mign         ###   ########.fr       */
+/*   Updated: 2014/03/14 19:29:26 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,15 +68,21 @@ void	ft_define_context(t_center_ai *center)
 		ft_putstr_green("\tAMALIAS ENGAGING CONTEXTUALIZATION\n\n");
 		ft_engage_contextualizer(center);
 //		if a memory log file exist => Memory Restoration !
-		ft_putstr_green("\tAMALIAS MEMORY REGENERATION\n\n");
-//		ft_open_memory_log(center);
-//		if not log file must be created => Memory Creation !
-//		ft_create_memory_log(center);
-//		ft_who_am_i(center);
-//		ft_where_am_i(center);
-//		ft_what_i_do(center);
-//		ft_when_i_do(center);
-//		ft_define_master(center);
+		if (access("log/memory/memory.amalias", F_OK ) != -1 )
+		{
+			ft_putstr_green("\tAMALIAS MEMORY REGENERATION\n\n");
+			ft_open_memory_log(center);
+			ft_who_am_i(center);
+			ft_where_am_i(center);
+			ft_what_i_do(center);
+			ft_when_i_do(center);
+		}
+		else
+		{
+			ft_putstr_green("\tAMALIAS MEMORY GENERATION\n\n");
+			ft_generate_memory(center);
+		}
+		ft_define_master(center);
 		ft_putstr_blue("AMALIAS STARTING ! Enjoy my friend.\n");
 		ft_putstr_purple("\tWelcome to the machine\n\tWelcome on Amalias.\n");
 	}

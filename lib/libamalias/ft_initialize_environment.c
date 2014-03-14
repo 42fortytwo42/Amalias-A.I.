@@ -6,7 +6,7 @@
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/12 19:38:32 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/14 18:41:19 by tle-mign         ###   ########.fr       */
+/*   Updated: 2014/03/14 18:52:24 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	ft_initialize_environment(t_center_ai *center)
 		}
 		else
 			ft_putstr_red("Fail.\n");
-		ft_putstr_yellow("Initialize Voice Synthesys :\t\t");
+		ft_putstr_yellow("Initialize Voice Synthesis :\t\t");
 		if (ft_initialize_voice_synthesis(center) == 1)
 		{
 			ft_putstr_green("is OK !\n");
