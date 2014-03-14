@@ -18,4 +18,6 @@ Possibles Commands :
 
 -> "unlock" : this command will unlock Amalias if you have already locked her.
 
+-> "memory" : please don't test me on this side.
+
 -> "sos" : this command will call the autorities for emergency.
