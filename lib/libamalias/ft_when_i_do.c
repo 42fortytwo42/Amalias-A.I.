@@ -6,17 +6,17 @@
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/12 19:45:17 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/12 19:45:53 by tle-mign         ###   ########.fr       */
+/*   Updated: 2014/03/17 01:16:48 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libamalias.h"
 
-void	ft_when_i_do(t_center_ai *center)
+int		ft_when_i_do(t_center_ai *center)
 {
 	if (center)
 	{
 
-
 	}
+	return (0);
 }

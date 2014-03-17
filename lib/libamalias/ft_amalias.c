@@ -6,7 +6,7 @@
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/12 18:33:52 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/14 20:17:04 by tle-mign         ###   ########.fr       */
+/*   Updated: 2014/03/17 02:24:59 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	ft_define_context(t_center_ai *center)
 		ft_initialize_environment(center);
 		ft_check_memory(center);
 		ft_define_master(center);
-		ft_putstr_green("\n\tAMALIAS ENGAGING CONTEXTUALIZATION\n\n");
+		ft_putstr_green("\tAMALIAS ENGAGING CONTEXTUALIZATION\n\n");
 		ft_engage_contextualizer(center);
 		if (ft_check_amalias_deployement(center) != 1)
 		{
@@ -103,34 +103,43 @@ int		ft_check_amalias_deployement(t_center_ai *center)
 	if (center)
 	{
 		ft_putstr("\n");
-		if (center->deploy_initialization > 0)
+		if ((center->deploy_initialization - center->deploy_initialization_total) == 0)
 		{
 			ft_putstr_green("\tInitialization Process Fully Completed.\n");
 			count++;
 		}
 		else
 			ft_putstr_red("\tInitialization Process Incomplete !\n");
-		if (center->deploy_memory > 0)
+		ft_indicate_initialized(center->deploy_initialization, center->deploy_initialization_total);
+		if ((center->deploy_memory - center->deploy_memory_total) == 0)
 		{
 			ft_putstr_green("\tMemory Process Fully Completed.\n");
 			count++;
 		}
 		else
 			ft_putstr_red("\tMemory Process Incomplete !\n");
-		if (center->deploy_initialization > 0)
+		ft_indicate_initialized(center->deploy_memory, center->deploy_memory_total);
+		if ((center->deploy_contextualization - center->deploy_contextualization_total) == 0)
 		{
 			ft_putstr_green("\tContextualization Process Fully Completed.\n");
 			count++;
 		}
 		else
 			ft_putstr_red("\tContextualization Process Incomplete !\n");
+		ft_indicate_initialized(center->deploy_contextualization, center->deploy_contextualization_total);
 		if (count == count_total)
 		{
-			ft_putstr_green("\tAmalias is fully deployed on this computer.\n");
+			ft_putstr_green("\n\tAmalias is fully deployed on this computer.\n");
 			return (1);
 		}
 		else
-			ft_putstr_red("\tAmalias is not fully deployed on this computer.\n");
+		{
+			ft_putstr_red("\n\tAmalias is not fully deployed on this computer => Currently deployed at");
+			ft_indicate_stats((center->deploy_initialization + center->deploy_memory
+				+ center->deploy_contextualization), (center->deploy_initialization_total
+				+ center->deploy_memory_total + center->deploy_contextualization_total));
+			ft_putstr("\n");
+		}
 	}
 	return (0);
 }

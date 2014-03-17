@@ -6,7 +6,7 @@
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/12 19:38:32 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/17 01:06:11 by tle-mign         ###   ########.fr       */
+/*   Updated: 2014/03/17 01:44:25 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,6 +156,8 @@ void	ft_initialize_environment(t_center_ai *center)
 			ft_putnbr(count_total);
 			ft_putstr_blue(" Process.\n\n");
 		}
+		center->deploy_initialization = count_initialized;
+		center->deploy_initialization_total = count_total;
 	}
 }
 

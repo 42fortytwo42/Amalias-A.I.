@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_where_am_i.c                                    :+:      :+:    :+:   */
+/*   ft_indicate_initialized.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/03/12 19:42:23 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/17 01:16:21 by tle-mign         ###   ########.fr       */
+/*   Created: 2014/03/17 01:53:00 by tle-mign          #+#    #+#             */
+/*   Updated: 2014/03/17 02:24:21 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libamalias.h"
 
-int		ft_where_am_i(t_center_ai *center)
+void	ft_indicate_initialized(int value, int value_total)
 {
-	if (center)
+	if (1)
 	{
-
+		ft_putstr_blue("\t\tThere is ");
+		ft_putnbr(value);
+		ft_putstr_blue(" initialized process on a total of ");
+		ft_putnbr(value_total);
+		ft_putstr_blue(" process : ");
+		ft_indicate_stats(value, value_total);
+		ft_putstr("\n");
 	}
-	return (0);
 }

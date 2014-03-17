@@ -6,16 +6,17 @@
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/14 19:21:20 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/14 19:22:10 by tle-mign         ###   ########.fr       */
+/*   Updated: 2014/03/17 01:12:24 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libamalias.h"
 
-void	ft_create_memory_log(t_center_ai *center)
+int		ft_create_memory_log(t_center_ai *center)
 {
 	if (center)
 	{
 
 	}
+	return (0);
 }

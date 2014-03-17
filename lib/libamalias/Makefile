@@ -6,7 +6,7 @@
 #    By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/25 12:25:27 by tle-mign          #+#    #+#              #
-#    Updated: 2014/03/14 19:44:47 by tle-mign         ###   ########.fr        #
+#    Updated: 2014/03/17 02:01:55 by tle-mign         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -52,7 +52,9 @@ SRC =	ft_amalias.c \
 		ft_open_memory_log.c \
 		ft_create_memory_log.c \
 		ft_generate_memory.c \
-		ft_regenerate_memory 
+		ft_regenerate_memory \
+		ft_indicate_initialized.c \
+		ft_indicate_stats.c
 
 OBJ = $(SRC:.c=.o)
 

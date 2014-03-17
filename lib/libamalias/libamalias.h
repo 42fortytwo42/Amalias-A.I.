@@ -6,7 +6,7 @@
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/12 18:31:38 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/17 01:05:44 by tle-mign         ###   ########.fr       */
+/*   Updated: 2014/03/17 02:01:29 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,11 @@ typedef struct						s_center_ai
 	char							*temporary_char;
 	char							*temporary_read_main_entry;
 	int								deploy_initialization;
+	int								deploy_initialization_total;
 	int								deploy_memory;
+	int								deploy_memory_total;
 	int								deploy_contextualization;
+	int								deploy_contextualization_total;
 	struct s_env_ai					*link_to_env_ai;
 	struct s_amalias				*link_to_amalias;
 	struct s_security				*link_to_security;
@@ -128,19 +131,19 @@ int					ft_initialize_environment_interaction(t_center_ai *center);
 /*
 **	ft_who_am_i.c
 */
-void				ft_who_am_i(t_center_ai *center);
+int					ft_who_am_i(t_center_ai *center);
 /*
 **	ft_where_am_i.c
 */
-void				ft_where_am_i(t_center_ai *center);
+int					ft_where_am_i(t_center_ai *center);
 /*
 **	ft_what_i_do.c
 */
-void				ft_what_i_do(t_center_ai *center);
+int					ft_what_i_do(t_center_ai *center);
 /*
 **	ft_when_i_do.c
 */
-void				ft_when_i_do(t_center_ai *center);
+int					ft_when_i_do(t_center_ai *center);
 /*
 **	ft_define_master.c
 */
@@ -220,25 +223,39 @@ int					ft_initialize_learning_system(t_center_ai *center);
 **	ft_engage_contextualizer.c
 */
 void				ft_engage_contextualizer(t_center_ai *center);
+
 /*
 **	ft_open_memory_log.c
 */
-void				ft_open_memory_log(t_center_ai *center);
+int					ft_open_memory_log(t_center_ai *center);
 /*
 **	ft_create_memory_log.c
 */
-void				ft_create_memory_log(t_center_ai *center);
+int					ft_create_memory_log(t_center_ai *center);
 /*
 **	ft_generate_memory.c
 */
 void				ft_generate_memory(t_center_ai *center);
-void				ft_generate_who_am_i(t_center_ai *center);
-void				ft_generate_where_am_i(t_center_ai *center);
-void				ft_generate_what_i_do(t_center_ai *center);
-void				ft_generate_when_i_do(t_center_ai *center);
+int					ft_generate_who_am_i(t_center_ai *center);
+int					ft_generate_where_am_i(t_center_ai *center);
+int					ft_generate_what_i_do(t_center_ai *center);
+int					ft_generate_when_i_do(t_center_ai *center);
 /*
 **	ft_regenerate_memory.c
 */
 void				ft_regenerate_memory(t_center_ai *center);
+int					ft_define_location_galaxy(t_center_ai *center);
+int					ft_define_location_solar_system(t_center_ai *center);
+int					ft_define_location_planetary(t_center_ai *center);
+int					ft_define_location_actual(t_center_ai *center);
+int					ft_get_gps_info(t_center_ai *center);
+/*
+**	ft_indicate_initialized.c
+*/
+void				ft_indicate_initialized(int value, int value_total);
+/*
+**	ft_indicate_stats.c
+*/
+void				ft_indicate_stats(int value, int value_total);
 
 #endif /* !LIBAMALIAS_H */
