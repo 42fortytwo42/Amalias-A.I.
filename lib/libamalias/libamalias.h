@@ -6,7 +6,7 @@
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/12 18:31:38 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/17 10:39:15 by tle-mign         ###   ########.fr       */
+/*   Updated: 2014/03/17 14:28:21 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -354,6 +354,29 @@ typedef struct						s_crew
 	struct s_crew					*next;
 	struct s_crew					*previous;
 }									t_crew;
+
+typedef struct						s_matrix_ai
+{
+	double							id_matrix_system;
+	int								size_x;
+	int								size_y;
+	int								size_z;
+	int								time;
+	struct s_matrix					*link_to_matrix;
+	struct s_matrix_ai				*next;
+	struct s_matrix_ai				*previous;
+}									t_matrix_ai;
+
+typedef struct						s_matrix
+{
+	double							id_matrix_grid;
+	int								*y;
+	int								*x;
+	int								*z;
+	int								time;
+	struct s_matrix					*next;
+	struct s_matrix					*previous;
+}									t_matrix;
 
 /*
 **	ft_amalias.c
