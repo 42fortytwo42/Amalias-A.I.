@@ -6,7 +6,7 @@
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/12 19:51:59 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/17 04:25:53 by tle-mign         ###   ########.fr       */
+/*   Updated: 2014/03/17 07:06:12 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,11 @@ void	ft_analyze_read_entry(t_center_ai *center)
 		else if (ft_strcmp(center->temporary_read_main_entry, "render\n") == 0)
 			ft_putstr_purple("It is simply impossible at this time !\n");
 		else if (ft_strcmp(center->temporary_read_main_entry, "environment\n") == 0)
-			ft_putstr_purple("Currently unavailable\n");
+			ft_putstr_purple("Environment => Currently unavailable\n");
+		else if (ft_strcmp(center->temporary_read_main_entry, "restart\n") == 0)
+			ft_putstr_purple("Restart => Currently unavailable\n");
+		else if (ft_strcmp(center->temporary_read_main_entry, "reboot\n") == 0)
+			ft_putstr_purple("Reboot => Currently unavailable\n");
 		else
 		{
 			ft_putstr_purple("I cannot find what you mean with : ");

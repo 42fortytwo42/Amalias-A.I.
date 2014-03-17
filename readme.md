@@ -24,6 +24,10 @@ Possibles Commands :
 
 -> "environment" : this command will show you the actual software environment.
 
+-> "restart" : this command will restart Amalias from first initialization stage.
+
+-> "reboot" : this command will reboot the entire system and Amalias will be restarted from first initialization stage.
+
 -> "render" : this command will ask for a render generation.
 
 -> "help" : this command will give you some help.
