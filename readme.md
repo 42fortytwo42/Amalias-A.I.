@@ -8,11 +8,23 @@ This A.I.O.S. is dedicated to space program exploration called .Amalias (this is
 .Amalias project is designed to make the space robot explorer usable by Public Schools at any time during the mission.
 Here is the challenge. Please, come with us !
 
+Install (32/64 bits):
+
+Under MacOs Maverick, just write "make" in your Terminal, and start the executable file named "Amalias"
+Under Ubuntu => Please try on your computer.
+Under Windows => No version forseen at this time (.Amalias is designed to be a A.I.O.S, not a simple app)
+
 Possibles Commands :
 
 -> "amalias" : Hello to my A.I.O.S.
 
 -> "exit" : this command will close Amalias.
+
+-> "mission" : this command will give you state of the current Mission.
+
+-> "environment" : this command will show you the actual software environment.
+
+-> "render" : this command will ask for a render generation.
 
 -> "help" : this command will give you some help.
 
