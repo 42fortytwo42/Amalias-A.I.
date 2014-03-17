@@ -6,7 +6,7 @@
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/12 18:31:38 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/17 10:36:10 by tle-mign         ###   ########.fr       */
+/*   Updated: 2014/03/17 10:39:15 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -174,6 +174,7 @@ typedef struct						s_memory_subconscious
 	double							number_double;
 	void							*link_to_anything;
 	char							*string;
+	struct s_memory_sub_list		*link_to_an_other_dimension;
 	struct s_memory_subconscious	*next;
 	struct s_memory_subconscious	*previous;
 }									t_memory_subconscious;
