@@ -6,7 +6,7 @@
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/12 18:33:52 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/17 02:24:59 by tle-mign         ###   ########.fr       */
+/*   Updated: 2014/03/17 03:25:06 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,8 @@ void	ft_define_context(t_center_ai *center)
 		ft_define_master(center);
 		ft_putstr_green("\tAMALIAS ENGAGING CONTEXTUALIZATION\n\n");
 		ft_engage_contextualizer(center);
+		ft_putstr_green("\tAMALIAS ENGAGING VIRTUALIZATION\n\n");
+		ft_engage_virtualization(center);
 		if (ft_check_amalias_deployement(center) != 1)
 		{
 			ft_putstr_blue("\n\t=> Amalias is starting in Safe Boot Mode <=\n\n");
@@ -98,11 +100,11 @@ int		ft_check_amalias_deployement(t_center_ai *center)
 	int		count;
 	int		count_total;
 
-	count_total = 3;
+	count_total = 0;
 	count = 0;
 	if (center)
 	{
-		ft_putstr("\n");
+		count_total++;
 		if ((center->deploy_initialization - center->deploy_initialization_total) == 0)
 		{
 			ft_putstr_green("\tInitialization Process Fully Completed.\n");
@@ -111,6 +113,7 @@ int		ft_check_amalias_deployement(t_center_ai *center)
 		else
 			ft_putstr_red("\tInitialization Process Incomplete !\n");
 		ft_indicate_initialized(center->deploy_initialization, center->deploy_initialization_total);
+		count_total++;
 		if ((center->deploy_memory - center->deploy_memory_total) == 0)
 		{
 			ft_putstr_green("\tMemory Process Fully Completed.\n");
@@ -119,6 +122,7 @@ int		ft_check_amalias_deployement(t_center_ai *center)
 		else
 			ft_putstr_red("\tMemory Process Incomplete !\n");
 		ft_indicate_initialized(center->deploy_memory, center->deploy_memory_total);
+		count_total++;
 		if ((center->deploy_contextualization - center->deploy_contextualization_total) == 0)
 		{
 			ft_putstr_green("\tContextualization Process Fully Completed.\n");
@@ -127,6 +131,15 @@ int		ft_check_amalias_deployement(t_center_ai *center)
 		else
 			ft_putstr_red("\tContextualization Process Incomplete !\n");
 		ft_indicate_initialized(center->deploy_contextualization, center->deploy_contextualization_total);
+		count_total++;
+		if ((center->deploy_virtualization - center->deploy_virtualization_total) == 0)
+		{
+			ft_putstr_green("\tVirtualization Process Fully Completed.\n");
+			count++;
+		}
+		else
+			ft_putstr_red("\tVirtualization Process Incomplete !\n");
+		ft_indicate_initialized(center->deploy_virtualization, center->deploy_virtualization_total);
 		if (count == count_total)
 		{
 			ft_putstr_green("\n\tAmalias is fully deployed on this computer.\n");
@@ -136,8 +149,10 @@ int		ft_check_amalias_deployement(t_center_ai *center)
 		{
 			ft_putstr_red("\n\tAmalias is not fully deployed on this computer => Currently deployed at");
 			ft_indicate_stats((center->deploy_initialization + center->deploy_memory
-				+ center->deploy_contextualization), (center->deploy_initialization_total
-				+ center->deploy_memory_total + center->deploy_contextualization_total));
+				+ center->deploy_contextualization + center->deploy_virtualization),
+				(center->deploy_initialization_total
+				+ center->deploy_memory_total + center->deploy_contextualization_total
+				+ center->deploy_virtualization_total));
 			ft_putstr("\n");
 		}
 	}

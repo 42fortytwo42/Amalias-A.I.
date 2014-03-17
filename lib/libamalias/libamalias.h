@@ -6,7 +6,7 @@
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/12 18:31:38 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/17 02:01:29 by tle-mign         ###   ########.fr       */
+/*   Updated: 2014/03/17 03:39:43 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ typedef struct						s_center_ai
 	int								deploy_memory_total;
 	int								deploy_contextualization;
 	int								deploy_contextualization_total;
+	int								deploy_virtualization;
+	int								deploy_virtualization_total;
 	struct s_env_ai					*link_to_env_ai;
 	struct s_amalias				*link_to_amalias;
 	struct s_security				*link_to_security;
@@ -257,5 +259,20 @@ void				ft_indicate_initialized(int value, int value_total);
 **	ft_indicate_stats.c
 */
 void				ft_indicate_stats(int value, int value_total);
+/*
+**	ft_engage_virtualization
+*/
+void				ft_engage_virtualization(t_center_ai *center);
+/*
+**	ft_generate_fourdimension_matrix.c
+*/
+int					ft_generate_fourdimension_matrix(t_center_ai *center);
+/*
+**	ft_integrate.c
+*/
+int					ft_integrate_motion_to_fourdimension_matrix(t_center_ai *center);
+int					ft_integrate_data_to_fourdimension_matrix(t_center_ai *center);
+int					ft_integrate_galactic_map(t_center_ai *center);
+int					ft_activate_matrix_in_subconscious(t_center_ai *center);
 
 #endif /* !LIBAMALIAS_H */
