@@ -8,12 +8,8 @@ This A.I.O.S. is dedicated to space program exploration called .Amalias (this is
 .Amalias project is designed to make the space robot explorer usable by Public Schools at any time during the mission.
 Here is the challenge. Please, come with us !
 
-->![BioDeploy .Systems](https://lh6.googleusercontent.com/-OA6cjGPB1Rk/AAAAAAAAAAI/AAAAAAAAADE/PMR7f9YqfdE/photo.jpg)<-
-
-->![.Amalias](http://s1.dmcdn.net/BNx5c/x240-f2m.jpg)<-
-
-<img align="center" src="https://lh6.googleusercontent.com/-OA6cjGPB1Rk/AAAAAAAAAAI/AAAAAAAAADE/PMR7f9YqfdE/photo.jpg" alt="BioDeploy .Systems">
-<img align="center" src="http://s1.dmcdn.net/BNx5c/x240-f2m.jpg" alt="BioDeploy .Systems">
+<img margin="auto" src="https://lh6.googleusercontent.com/-OA6cjGPB1Rk/AAAAAAAAAAI/AAAAAAAAADE/PMR7f9YqfdE/photo.jpg" alt="BioDeploy .Systems">
+<img margin="auto" src="http://s1.dmcdn.net/BNx5c/x240-f2m.jpg" alt="BioDeploy .Systems">
 
 Install (32/64 bits):
 
