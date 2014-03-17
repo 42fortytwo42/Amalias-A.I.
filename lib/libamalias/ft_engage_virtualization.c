@@ -6,7 +6,7 @@
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/17 03:25:24 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/17 09:03:52 by tle-mign         ###   ########.fr       */
+/*   Updated: 2014/03/17 09:10:26 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ft_engage_virtualization(t_center_ai *center)
         }
         else
             ft_putstr_red("Fail.\n");
-		ft_putstr_yellow("Integrate Galactic Map: \t\t");
+		ft_putstr_yellow("Integrate Galactic Map : \t\t");
         count_total++;
         if (ft_integrate_galactic_map(center) == 1)
         {

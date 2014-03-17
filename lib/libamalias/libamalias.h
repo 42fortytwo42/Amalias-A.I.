@@ -6,7 +6,7 @@
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/12 18:31:38 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/17 09:05:01 by tle-mign         ###   ########.fr       */
+/*   Updated: 2014/03/17 10:36:10 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,7 @@ typedef struct						s_memory_file
 	int								*number_int;
 	float							*number_float;
 	double							*number_double;
+	void							*link_to_anything;
 	struct s_memory_crap_list		*link_to_memory_list_scrap;
 	struct s_memory_file			*next;
 	struct s_memory_file			*previous;
@@ -177,9 +178,38 @@ typedef struct						s_memory_subconscious
 	struct s_memory_subconscious	*previous;
 }									t_memory_subconscious;
 
+typedef struct						s_mission_list
+{
+	int								id_mission_list;
+	struct s_mission_list			*next;
+	struct s_mission_list			*previous;
+}									t_mission_list;
+
+typedef struct						s_mission
+{
+	int								id_mission;
+	int								started;
+	int								finished;
+	int								date_start;
+	int								date_end;
+	char							*description;
+	char							*mission_small;
+	char							*mission_medium;
+	char							*mission_large;
+	void							*link_to_anything;
+	struct s_list_objectives		*link_to_list_objectives;
+	struct s_mission				*next;
+	struct s_mission				*previous;
+}									t_mission;
+
 typedef struct						s_list_objectives
 {
 	int								id_list_objectives;
+	char							*description;
+	int								started;
+	int								finished;
+	int								date_start;
+	int								date_end;
 	int								temporary_int;
 	char							temporary_char;
 	struct s_list_objectives		*next;
@@ -188,6 +218,11 @@ typedef struct						s_list_objectives
 
 typedef struct						s_objectives
 {
+	int								id_objective;
+	char							*description;
+	char							*objective_small;
+	char							*objective_medium;
+	char							*objective_large;
 	int								temporary_int;
 	char							temporary_char;
 	struct s_objectives				*next;
@@ -204,6 +239,120 @@ typedef struct						s_security
 	double							remote_code_2;
 	double							remote_code_3;
 }									t_security;
+
+typedef struct						s_security_tag
+{
+	int								id_security_tag;
+	double							tag_first_part;
+	double							tag_second_part;
+	double							tag_three_part;
+	char							key;
+	struct s_security				*next;
+	struct s_security				*previous;
+}									t_security_tag;
+
+typedef struct						s_shipowner
+{
+	int								id_shipowner;
+	char							*name;
+	char							*organisation;
+	char							*galaxy;
+	char							*solar_system;
+	char							*planet;
+	char							*country;
+	char							*city;
+	double							key1;
+	double							key2;
+	double							key3;
+	double							key4;
+	char							*key5;
+	struct s_ship_list				*link_to_ship_list;
+	struct s_crew					*link_to_crew_member;
+	struct s_shipowner				*next;
+	struct s_shipowner				*previous;
+}									t_shipowner;
+
+typedef struct						s_ship_list
+{
+	int								id_ship_list;
+	char							*name;
+	char							*crew_tag;
+	char							*last_known_position;
+	struct s_crew					*last_commander_known;
+	struct s_ship					*link_to_ship;
+	struct s_ship_list				*next;
+	struct s_ship_list				*previous;
+}									t_ship_list;
+
+typedef struct						s_ship
+{
+	int								id_ship;
+	char							*name_ship;
+	int								crew_members;
+	int								date_origin;
+	char							*place_of_origin;
+	char							*planet;
+	char							*solar_system;
+	char							*galaxy;
+	double							key1;
+	double							key2;
+	double							key3;
+	char							*key4;
+	int								crew_capacity;
+	char							*last_known_position;
+	struct s_crew					*last_known_captain;
+	struct s_crew_list				*link_to_crew;
+	struct s_ship					*next;
+	struct s_ship					*previous;
+}									t_ship;
+
+typedef struct						s_vehicules_list
+{
+	int								id_vehicules_list;
+	char							*description;
+	char							*name_list;
+	struct s_vehicules_list			*next;
+	struct s_vehicules_list			*previous;
+}									t_vehicules_list;
+
+typedef struct						s_vehicules
+{
+	int								id_vehicule;
+	int								crew_capacity;
+	char							*transport_mode;
+	char							*description;
+	char							*name_vehicule;
+	char							*last_known_position;
+	struct s_vehicules				*next;
+	struct s_vehicules				*previous;
+}									t_vehicules;
+
+typedef struct						s_crew_list
+{
+	int								id_crew_list;
+	char							*crew_name;
+	int								key1;
+	char							*key2;
+	struct s_crew					*link_to_crew_members;
+	struct s_crew_list				*next;
+	struct s_crew_list				*previous;
+}									t_crew_list;
+
+typedef struct						s_crew
+{
+	int								id_crew_member;
+	char							*grade;
+	char							*surname;
+	char							*lastname;
+	char							*pseudo;
+	char							*key;
+	char							*level;
+	char							*last_known_position;
+	struct s_ship					*last_actual_ship;
+	struct s_crew_list				*link_to_crew_list;
+	struct s_crew					*next;
+	struct s_crew					*previous;
+}									t_crew;
 
 /*
 **	ft_amalias.c
