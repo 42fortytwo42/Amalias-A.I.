@@ -1,5 +1,7 @@
 BioDeploy .Amalias /*\ ArtificiaL Intelligence operating SysteM - Open Source Version /*\ ! UNIX VERSION !
 
+Operating System unready. Try .Amalias on your computer (Pay attention it is an Unix Version - V0.005).
+
 This A.I.O.S. is dedicated to space program exploration called .Amalias (this is a BioDeploy initiative).
 .Amalias is a mission borned in february 2013 to explore Io, a Jupiter moon, by developing the possibilities offered by the Open Source/Hardware way.
 
@@ -27,3 +29,10 @@ Possibles Commands :
 -> "memory" : please don't test me on this side.
 
 -> "sos" : this command will call the autorities for emergency.
+
+More :
+
+Please register for the Alpha and Beta testing.
+Email us to => contact@biodeploy.com
+Let us your contact, we will send you data as soon as possible.
+Thanks to you, to your participation !
