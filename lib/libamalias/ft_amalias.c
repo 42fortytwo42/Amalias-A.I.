@@ -6,7 +6,7 @@
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/12 18:33:52 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/17 03:25:06 by tle-mign         ###   ########.fr       */
+/*   Updated: 2014/03/17 07:20:43 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_amalias(int argc, char **argv, char **env)
 		&& ft_check_arg(argc, argv, env) == 1
 		&& ft_save_arg(argc, argv, env, center) == 1)
 	{
-		ft_putstr_purple("\tWelcome to the Machine.\n\n");
+		ft_putstr_purple("\n\tWelcome to the Machine.\n\n");
 		center->link_to_env_ai = environment;
 		center->link_to_security = security;
 		center->link_to_amalias = amalias;

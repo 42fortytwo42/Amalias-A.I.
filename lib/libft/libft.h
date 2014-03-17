@@ -6,7 +6,7 @@
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/25 15:28:52 by tle-mign          #+#    #+#             */
-/*   Updated: 2013/12/18 17:05:14 by tle-mign         ###   ########.fr       */
+/*   Updated: 2014/03/17 08:08:10 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ char	*ft_itoa(int n);
 void	ft_putendl(char const *s);
 void	ft_putnbr(int n);
 void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char const *s, int fd);
+int		ft_putstr_fd(char const *s, int fd);
 void	ft_putendl_fd(char const *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_strclr(char *s);

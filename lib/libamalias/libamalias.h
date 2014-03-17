@@ -6,7 +6,7 @@
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/12 18:31:38 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/17 03:39:43 by tle-mign         ###   ########.fr       */
+/*   Updated: 2014/03/17 08:44:45 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 # define LIBAMALIAS_H
 
 # define BUFFER_READ_MAIN_ENTRY 4196
+# define BUFFER_READ_MEMORY 8000000
 
+# include <stdio.h>
+# include <fcntl.h>
 # include <sys/types.h>
 # include <sys/uio.h>
 # include <unistd.h>
@@ -30,6 +33,7 @@ typedef struct						s_center_ai
 	char							*name_amalias;
 	char							*temporary_char;
 	char							*temporary_read_main_entry;
+	char							*temporary_read_memory;
 	int								deploy_initialization;
 	int								deploy_initialization_total;
 	int								deploy_memory;
@@ -73,7 +77,105 @@ typedef struct						s_amalias
 	char							*date_now;
 	char							*serial_number;
 	char							*amalias_id;
+	struct s_memory					*link_to_memory;
 }									t_amalias;
+
+typedef struct						s_memory
+{
+	double							id_memory;
+	char							*type;
+	char							*title;
+	char							*description;
+	char							*content_small;
+	char							*content_medium;
+	char							*content_large;
+	void							*link_to_anything;
+	struct s_memory					*next;
+	struct s_memory					*previous;
+}									t_memory;
+
+typedef struct						s_memory_file_list
+{
+	double							id_memory_file_list;
+	struct s_memory_file_list		*next;
+	struct s_memory_file_list		*previous;
+}									t_memory_file_list;
+
+typedef struct						s_memory_file
+{
+	double							id_memory_file;
+	char							*title;
+	char							*description_light;
+	char							*description_large;
+	int								*number_int;
+	float							*number_float;
+	double							*number_double;
+	struct s_memory_crap_list		*link_to_memory_list_scrap;
+	struct s_memory_file			*next;
+	struct s_memory_file			*previous;
+}									t_memory_file;
+
+typedef struct						s_memory_scrap_list
+{
+	double							id_memory_scrap_list;
+	struct s_memory_crap			*link_to_memory_scrap;
+	struct s_memory_scrap_list		*next;
+	struct s_memory_scrap_list		*previous;
+}									t_memory_scrap_list;
+
+typedef struct						s_memory_scrap
+{
+	double							id_memory_scrap;
+	int								number_int;
+	float							number_float;
+	double							number_double;
+	char							*string;
+	void							*link_to_anything;
+	struct s_memory_snippet_list	*link_to_memory_snippet_list;
+	struct s_memory_scrap			*next;
+	struct s_memory_scrap			*previous;
+}									t_memory_scrap;
+
+typedef struct						s_memory_snippet_list
+{
+	double							id_memory_snippet_list;
+	struct s_memory_snippet			*link_to_memory_snippet;
+	struct s_memory_snippet_list	*next;
+	struct s_memory_snippet_list	*previous;
+}									t_memory_snippet_list;
+
+typedef struct						s_memory_snippet
+{
+	double							id_memory_snippet;
+	int								number_int;
+	float							number_float;
+	double							number_double;
+	char							*string;
+	void							*link_to_anything;
+	struct s_memory_sub_list		*link_to_memory_subconscious_list;
+	struct s_memory_snippet			*next;
+	struct s_memory_snippet			*previous;
+}									t_memory_snippet;
+
+typedef struct						s_memory_sub_list
+{
+	double							id_memory_sub_list;
+	struct s_memory_subconscious	*link_to_subconscious;
+	struct s_memory_sub_list		*next;
+	struct s_memory_sub_list		*previous;
+}									t_memory_sub_list;
+
+typedef struct						s_memory_subconscious
+{
+	double							id_subconscious;
+	int								number_int;
+	float							number_float;
+	double							number_double;
+	void							*link_to_anything;
+	char							*string;
+	struct s_memory_subconscious	*next;
+	struct s_memory_subconscious	*previous;
+}									t_memory_subconscious;
 
 typedef struct						s_list_objectives
 {

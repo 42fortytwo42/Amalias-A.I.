@@ -6,7 +6,7 @@
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/14 19:24:06 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/17 02:13:42 by tle-mign         ###   ########.fr       */
+/*   Updated: 2014/03/17 08:48:48 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	ft_generate_memory(t_center_ai *center)
         else
         {
 			ft_putstr_green("\t[ Process Fully Completed ]\n\t");
-			ft_putnbr(count_total);
+			ft_putnbr(count_initialized);
             ft_putstr_blue(" Process initialized on a total of ");
             ft_putnbr(count_total);
             ft_putstr_blue(" Process.\n\n");
