@@ -6,7 +6,7 @@
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/17 03:36:05 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/17 03:38:55 by tle-mign         ###   ########.fr       */
+/*   Updated: 2014/03/17 09:04:43 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,15 @@ int		ft_integrate_galactic_map(t_center_ai *center)
 }
 
 int		ft_activate_matrix_in_subconscious(t_center_ai *center)
+{
+	if (center)
+	{
+
+	}
+	return (0);
+}
+
+int		ft_integrate_physics_to_matrix(t_center_ai *center)
 {
 	if (center)
 	{

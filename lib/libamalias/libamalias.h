@@ -6,7 +6,7 @@
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/12 18:31:38 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/17 08:44:45 by tle-mign         ###   ########.fr       */
+/*   Updated: 2014/03/17 09:05:01 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -376,5 +376,6 @@ int					ft_integrate_motion_to_fourdimension_matrix(t_center_ai *center);
 int					ft_integrate_data_to_fourdimension_matrix(t_center_ai *center);
 int					ft_integrate_galactic_map(t_center_ai *center);
 int					ft_activate_matrix_in_subconscious(t_center_ai *center);
+int					ft_integrate_physics_to_matrix(t_center_ai *center);
 
 #endif /* !LIBAMALIAS_H */
