@@ -8,9 +8,9 @@ This A.I.O.S. is dedicated to space program exploration called .Amalias (this is
 .Amalias project is designed to make the space robot explorer usable by Public Schools at any time during the mission.
 Here is the challenge. Please, come with us !
 
-http://www.dailymotion.com/video/xyz5sz_le-rover-pour-tylo-voyage-atterrissage-et-decouverte-d-une-anomalie-eas\
-ter-eggs-ksp-0-19-1-kerbal-sp_videogames
-![](http://www.google.fr/imgres?sa=X&espvd=210&es_sm=91&biw=1581&bih=1048&tbm=isch&tbnid=K1vrkKE7zDasxM%3A&imgrefurl=https%3A%2F%2Fplus.google.com%2F103110278467836693317&docid=sAHru6XxkdlukM&itg=1&imgurl=https%3A%2F%2Flh6.googleusercontent.com%2F-OA6cjGPB1Rk%2FAAAAAAAAAAI%2FAAAAAAAAADE%2FPMR7f9YqfdE%2Fphoto.jpg&w=497&h=512&ei=xM8mU5qLFaL30gWXvYGACg&zoom=1&iact=rc&dur=1683&page=1&start=0&ndsp=44&ved=0CFoQrQMwAQ)
+![BioDeploy .Systems](https://lh6.googleusercontent.com/-OA6cjGPB1Rk/AAAAAAAAAAI/AAAAAAAAADE/PMR7f9YqfdE/photo.jpg)
+
+![.Amalias](http://s1.dmcdn.net/BNx5c/x240-f2m.jpg)
 
 Install (32/64 bits):
 
