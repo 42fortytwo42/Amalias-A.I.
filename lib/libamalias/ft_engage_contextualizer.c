@@ -6,7 +6,7 @@
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/14 18:38:23 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/17 03:18:08 by tle-mign         ###   ########.fr       */
+/*   Updated: 2014/03/17 09:07:08 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	ft_engage_contextualizer(t_center_ai *center)
             ft_putstr_red("Fail.\n");
         /* Count Initialized*/
         ft_putstr_blue("\nContextualization Status : ");
-        if (count_initialized != count_total)
+        if (count_initialized != count_total || count_initialized == 0)
         {
             ft_putstr_red("\t[ Process Incomplete ! ]\n\t");
             ft_putnbr(count_initialized);
