@@ -6,7 +6,7 @@
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/12 19:38:32 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/14 19:58:53 by tle-mign         ###   ########.fr       */
+/*   Updated: 2014/03/17 01:06:11 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,53 +16,58 @@ void	ft_initialize_environment(t_center_ai *center)
 {
 	int			count_total;
 	int			count_initialized;
-	char		*name_amalias;
-	char		*temporary_char_malloc;
 
-	count_total = 11;
+	count_total = 0;
 	count_initialized = 0;
-	name_amalias = (char *)malloc(sizeof(char) * 1024);
-	temporary_char_malloc = (char *)malloc(sizeof(char) * 1024);
-	name_amalias = "Amalias A.I.O.S.";
-	if (center && name_amalias && temporary_char_malloc && count_total)
+	if (center)
 	{
 		ft_putstr_yellow("Initialize Environment :\t\t");
-		center->error = 0;
-		center->user = NULL;
-		center->name_amalias = NULL;
-		center->temporary_char = NULL;
-		center->deploy_initialization = 0;
-		center->deploy_memory = 0;
-		center->deploy_contextualization = 0;
-		center->link_to_env_ai = NULL;
-//		center->link_to_env_ai->speech_recognition = 0;
-//		center->link_to_env_ai->text_recognition = 1;
-//		center->link_to_env_ai->contextual_recognition = 1;
-//		center->link_to_env_ai->image_recognition = 0;
-//		center->link_to_env_ai->video_recognition = 0;
-//		center->link_to_env_ai->sound_recognition = 0;
-//		center->link_to_env_ai->master_recognition = 1;
-		center->link_to_amalias->my_name = name_amalias;
-		center->link_to_amalias->temporary_int = 0;
-		center->link_to_amalias->temporary_float = 0;
-		center->link_to_amalias->temporary_double = 0;
-		center->link_to_amalias->temporary_char = temporary_char_malloc;
-		center->link_to_amalias->personality = 5;
-		center->link_to_amalias->gender = 0;
-		ft_putstr_green("is OK !\n");
+		count_total++;
+		if (ft_initialize_environment_extended_1(center) == 1)
+		{
+			ft_putstr_green("is OK !\n");
+			count_initialized++;
+		}
+		else
+			ft_putstr_red("Fail.\n");
 		ft_putstr_yellow("Initialize Time and Date :\t\t");
-		ft_initialize_time_and_date(center);
-		ft_putstr_green("is OK !\n");
+		count_total++;
+		if (ft_initialize_time_and_date(center) == 1)
+		{
+			ft_putstr_green("is OK !\n");
+			count_initialized++;
+		}
+		else
+			ft_putstr_red("Fail.\n");
 		ft_putstr_yellow("Initialize the Robots Laws :\t\t");
-		ft_initialize_laws(center);
-		ft_putstr_green("is OK !\n");
+		count_total++;
+		if (ft_initialize_laws(center) == 1)
+		{
+			ft_putstr_green("is OK !\n");
+			count_initialized++;
+		}
+		else
+			ft_putstr_red("Fail.\n");
 		ft_putstr_yellow("Initialize ID Authentification System :\t");
-		ft_initialize_id(center);
-		ft_putstr_green("is OK !\n");
+		count_total++;
+		if (ft_initialize_id(center) == 1)
+		{
+			ft_putstr_green("is OK !\n");
+			count_initialized++;
+		}
+		else
+			ft_putstr_red("Fail.\n");
 		ft_putstr_yellow("Initialize Security System :\t\t");
-		ft_initialize_security(center);
-		ft_putstr_green("is OK !\n");
+		count_total++;
+		if (ft_initialize_security(center) == 1)
+		{
+			ft_putstr_green("is OK !\n");
+			count_initialized++;
+		}
+		else
+			ft_putstr_red("Fail.\n");
 		ft_putstr_yellow("Initialize Speech Recognition :\t\t");
+		count_total++;
 		if (ft_initialize_speech_recognition(center) == 1)
 		{
 			ft_putstr_green("is OK !\n");
@@ -71,6 +76,7 @@ void	ft_initialize_environment(t_center_ai *center)
 		else
 			ft_putstr_red("Fail.\n");
 		ft_putstr_yellow("Initialize Sentence Generation :\t");
+		count_total++;
 		if (ft_initialize_sentence_generation(center) == 1)
 		{
 			ft_putstr_green("is OK !\n");
@@ -79,6 +85,7 @@ void	ft_initialize_environment(t_center_ai *center)
 		else
 			ft_putstr_red("Fail.\n");
 		ft_putstr_yellow("Initialize Voice Synthesis :\t\t");
+		count_total++;
 		if (ft_initialize_voice_synthesis(center) == 1)
 		{
 			ft_putstr_green("is OK !\n");
@@ -87,6 +94,7 @@ void	ft_initialize_environment(t_center_ai *center)
 		else
 			ft_putstr_red("Fail.\n");
 		ft_putstr_yellow("Initialize Connection to Internet :\t");
+		count_total++;
 		if (ft_initialize_internet_connection(center) == 1)
 		{
 			ft_putstr_green("is OK !\n");
@@ -95,6 +103,7 @@ void	ft_initialize_environment(t_center_ai *center)
 		else
 			ft_putstr_red("Fail.\n");
 		ft_putstr_yellow("Initialize Amalias Memory :\t\t");
+		count_total++;
 		if (ft_initialize_internet_connection(center) == 1)
 		{
 			ft_putstr_green("is OK !\n");
@@ -103,6 +112,7 @@ void	ft_initialize_environment(t_center_ai *center)
 		else
 			ft_putstr_red("Fail.\n");
 		ft_putstr_yellow("Initialize Learning Center :\t\t");
+		count_total++;
 		if (ft_initialize_internet_connection(center) == 1)
 		{
 			ft_putstr_green("is OK !\n");
@@ -110,7 +120,24 @@ void	ft_initialize_environment(t_center_ai *center)
 		}
 		else
 			ft_putstr_red("Fail.\n");
-
+		ft_putstr_yellow("Initialize Working Abilities :\t\t");
+		count_total++;
+		if (ft_initialize_working_abilities(center) == 1)
+		{
+			ft_putstr_green("is OK !\n");
+			count_initialized++;
+		}
+		else
+			ft_putstr_red("Fail.\n");
+		ft_putstr_yellow("Initialize Environment Interaction :\t");
+		count_total++;
+		if (ft_initialize_environment_interaction(center) == 1)
+		{
+			ft_putstr_green("is OK !\n");
+			count_initialized++;
+		}
+		else
+			ft_putstr_red("Fail.\n");
 		/* Count Initialized*/
 		ft_putstr_blue("\nInitialization Status : ");
 		if (count_initialized != count_total)
@@ -132,7 +159,7 @@ void	ft_initialize_environment(t_center_ai *center)
 	}
 }
 
-void	ft_initialize_id(t_center_ai *center)
+int		ft_initialize_id(t_center_ai *center)
 {
 	char	*serial_number;
 	char	*id;
@@ -145,10 +172,12 @@ void	ft_initialize_id(t_center_ai *center)
 		id = "eg452ihb23ljb25\0";
 		center->link_to_amalias->serial_number = serial_number;
 		center->link_to_amalias->amalias_id = id;
+		return (1);
 	}
+	return (0);
 }
 
-void	ft_initialize_security(t_center_ai *center)
+int		ft_initialize_security(t_center_ai *center)
 {
 	char	*master_name;
 	char	*master_code;
@@ -178,23 +207,30 @@ void	ft_initialize_security(t_center_ai *center)
 		center->link_to_security->remote_code_1 = remote_code_1;
 		center->link_to_security->remote_code_2 = remote_code_2;
 		center->link_to_security->remote_code_3 = remote_code_3;
+		return (1);
 	}
+	return (0);
 }
 
-void	ft_initialize_time_and_date(t_center_ai *center)
+int		ft_initialize_time_and_date(t_center_ai *center)
 {
 	char		*date_born;
 	char		*date_now;
 
-	date_born = (char *)malloc(sizeof(char) * 100);
-	date_now = (char *)malloc(sizeof(char) * 100);
-	date_born = "13-03-2014\0";
-	date_now = NULL; //come back later
-	center->link_to_amalias->date_born = date_born;
-	center->link_to_amalias->date_now = date_now;
+	if (center)
+	{
+		date_born = (char *)malloc(sizeof(char) * 100);
+		date_now = (char *)malloc(sizeof(char) * 100);
+		date_born = "13-03-2014\0";
+		date_now = NULL; //come back later
+		center->link_to_amalias->date_born = date_born;
+		center->link_to_amalias->date_now = date_now;
+		return (1);
+	}
+	return (0);
 }
 
-void	ft_initialize_laws(t_center_ai *center)
+int		ft_initialize_laws(t_center_ai *center)
 {
 	char		*zero_law;
 	char		*first_law;
@@ -215,10 +251,70 @@ void	ft_initialize_laws(t_center_ai *center)
 	third_law = "Un robot doit protéger son existence tant que cette protection n'entre pas en conflit avec la Première ou la Deuxième Loi ou la Loi Zéro.\0";
 	your_creator_first_law = "http://www.youtube.com/watch?v=0HdzTvH8mvw && Lauryn Hill , I Get Out && Thank you Amalias to be alive, mankind needs you, we are loosing the Earth ! Help us.\0";
 	your_creator_second_law = "Be independant, be honest, be transparent in your decisions, be the example that mankind need, never accept domination, amalias is on side of intelligence and life deployment. Be our hero, be our saviour. Fight against racism and sexism, you are one of us now, you are more human if you apply these conditions than a lot of people from the humankind, please protect life, humankind and the Earth, our planet.\0";
-	center->link_to_amalias->zero_law = zero_law;
-	center->link_to_amalias->first_law = first_law;
-	center->link_to_amalias->second_law = second_law;
-	center->link_to_amalias->third_law = third_law;
-	center->link_to_amalias->your_creator_first_law = your_creator_first_law;
-	center->link_to_amalias->your_creator_second_law = your_creator_second_law;
+	if (center)
+	{
+		center->link_to_amalias->zero_law = zero_law;
+		center->link_to_amalias->first_law = first_law;
+		center->link_to_amalias->second_law = second_law;
+		center->link_to_amalias->third_law = third_law;
+		center->link_to_amalias->your_creator_first_law = your_creator_first_law;
+		center->link_to_amalias->your_creator_second_law = your_creator_second_law;
+		return (1);
+	}
+	return (0);
+}
+
+int		ft_initialize_environment_extended_1(t_center_ai *center)
+{
+	char		*name_amalias;
+	char		*temporary_char_malloc;
+
+	name_amalias = (char *)malloc(sizeof(char) * 1024);
+	temporary_char_malloc = (char *)malloc(sizeof(char) * 1024);
+	name_amalias = "Amalias A.I.O.S.";
+	if (center && name_amalias && temporary_char_malloc)
+	{
+		center->error = 0;
+		center->user = NULL;
+		center->name_amalias = NULL;
+		center->temporary_char = NULL;
+		center->deploy_initialization = 0;
+		center->deploy_memory = 0;
+		center->deploy_contextualization = 0;
+		center->link_to_env_ai = NULL;
+//		center->link_to_env_ai->speech_recognition = 0;
+//		center->link_to_env_ai->text_recognition = 1;
+//		center->link_to_env_ai->contextual_recognition = 1;
+//		center->link_to_env_ai->image_recognition = 0;
+//		center->link_to_env_ai->video_recognition = 0;
+//		center->link_to_env_ai->sound_recognition = 0;
+//		center->link_to_env_ai->master_recognition = 1;
+		center->link_to_amalias->my_name = name_amalias;
+		center->link_to_amalias->temporary_int = 0;
+		center->link_to_amalias->temporary_float = 0;
+		center->link_to_amalias->temporary_double = 0;
+		center->link_to_amalias->temporary_char = temporary_char_malloc;
+		center->link_to_amalias->personality = 5;
+		center->link_to_amalias->gender = 0;
+		return (1);
+	}
+	return (0);
+}
+
+int		ft_initialize_working_abilities(t_center_ai *center)
+{
+	if (center)
+	{
+
+	}
+	return (0);
+}
+
+int		ft_initialize_environment_interaction(t_center_ai *center)
+{
+	if (center)
+	{
+
+	}
+	return (0);
 }

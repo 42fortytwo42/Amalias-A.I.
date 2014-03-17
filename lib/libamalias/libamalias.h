@@ -6,7 +6,7 @@
 /*   By: tle-mign <tle-mign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/12 18:31:38 by tle-mign          #+#    #+#             */
-/*   Updated: 2014/03/14 19:59:50 by tle-mign         ###   ########.fr       */
+/*   Updated: 2014/03/17 01:05:44 by tle-mign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,10 +118,13 @@ int					ft_save_arg(int argc, char **argv, char **env,
 **	ft_initialize_environment.c
 */
 void				ft_initialize_environment(t_center_ai *center);
-void				ft_initialize_laws(t_center_ai *center);
-void				ft_initialize_time_and_date(t_center_ai *center);
-void				ft_initialize_id(t_center_ai *center);
-void				ft_initialize_security(t_center_ai *center);
+int					ft_initialize_laws(t_center_ai *center);
+int					ft_initialize_time_and_date(t_center_ai *center);
+int					ft_initialize_id(t_center_ai *center);
+int					ft_initialize_security(t_center_ai *center);
+int					ft_initialize_environment_extended_1(t_center_ai *center);
+int					ft_initialize_working_abilities(t_center_ai *center);
+int					ft_initialize_environment_interaction(t_center_ai *center);
 /*
 **	ft_who_am_i.c
 */
